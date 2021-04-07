@@ -23,21 +23,22 @@ set inccommand=split
 set scrolloff=1
 
 " load local plugin if it's there, otherwise go git it.
-function! s:local_plug(package_name) abort 
-  if isdirectory(expand("~/vim-dev/plugins/" . a:package_name))
-    execute "Plug '~/vim-dev/plugins/".a:package_name."'"
-  else
-    execute "Plug 'joelpalmer/" .a:package_name."'"
-  endif
-endfunction
+" function! s:local_plug(package_name) abort 
+"   if isdirectory(expand("~/vim-dev/plugins/" . a:package_name))
+"     execute "Plug '~/vim-dev/plugins/".a:package_name."'"
+"   else
+"     execute "Plug 'joelpalmer/" .a:package_name."'"
+"   endif
+" endfunction
 " -- end local_plug()
 
 call plug#begin('~/.vim/plugged')
 " locals
-call s:local_plug('ci_dark.vim')
-call s:local_plug('fzf-gh.vim')
+" call s:local_plug('ci_dark.vim')
+" call s:local_plug('fzf-gh.vim')
 " add more locals --
 " Plugins
+Plug 'joelpalmer/fzf-gh.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'dense-analysis/ale'
 Plug 'pangloss/vim-javascript'
